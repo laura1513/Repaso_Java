@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int[] hardCodedArray = { 3, 2, 4, 5, 1 };
+        Scanner scanner = new Scanner(System.in);
+        int index = scanner.nextInt();
+        if (index > hardCodedArray.length - 1) {
+            System.out.println("The index is out of bounds.");
+        } else {
+            System.out.println(hardCodedArray[index]);
+        }
+    }
+}
+
+/*El programa te deja introducir un número, este número que introduzcas inidcará la posición de un array de enteros. El programa mostrará qué entero está en la posición del array que has introducido.
+Si el número introducido es mayor que el tamaño del array menos uno, pues la primera posición del array es 0, el programa mostrará por pantalla que el número introducido está fuera de los limites del array.
+Si no lo es, el programa mostrará el entero que esté en la posición introducida.
+Por ejemplo, si el usuario introduce 0, el programa mostrará 3.
+Si el usuario introduce 5, el programá inidcará que está fuera de los limites.*/
+
+//Could it be improved further?
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int[] hardCodedArray = { 3, 2, 4, 5, 1 };
+        Scanner scanner = new Scanner(System.in);
+        int index = scanner.nextInt();
+        try {
+            System.out.println(hardCodedArray[index]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("The index is out of bounds.");
+        }
+    }
+}
+
+/*Se puede mejorar poniendo una excepción, pues antes si el usuario introducía un número negativo saltaba una excepción en lugar del mensaje "The index is out of bounds", ahora si el usuario introduce un número negativo, saltará el mensaje*/

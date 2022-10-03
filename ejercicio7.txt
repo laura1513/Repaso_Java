@@ -1,0 +1,9 @@
+Reader reader = null;
+try {
+    reader = new FileReader("file.txt");
+    // code which may throw an exception
+} finally {
+    reader.close();
+}
+
+/*Este código sirve para poder leer el archivo de texto file.txt y en caso de que el programa dé error, poder cerrar la lectura del archivo y así darle fin a la ejecución del programa*/
